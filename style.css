@@ -1,0 +1,75 @@
+.wrapper {
+    width: 776px;
+    margin: 0 auto;
+}
+
+textarea {
+    width: 770px;
+    height: 200px;
+}
+
+#keyboard {
+    padding: 5px;
+    background: #e6c8c8;
+    border: 3px solid #222222;
+    border-radius: 5px;
+}
+
+#keyboard::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.k-key {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    margin: 2px;
+    padding: 2px;
+    float: left;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgb(150, 150, 150);
+}
+
+.k-key p {
+    text-align: center;
+    margin: 8px 0 0 0;
+}
+
+.activ {
+    background-color: rgb(73, 54, 19) !important;
+}
+
+.key_backspace, .key_caps,
+.key_shift {
+    width: 100px;
+}
+
+.key_tab {
+    width: 50px;
+}
+
+.key_enter {
+    width: 90px;
+}
+
+.key_shift {
+    width: 95px;
+}
+
+.key_space {
+    width: 342px;
+}
+
+.key_ctrl {
+    width: 43px;
+}
+
+.key_arrowRight+.key_ctrl {
+    width: 45px;
+}
+.key_spec{
+    background-color: rgba(112, 128, 144, 0.568);
+}
