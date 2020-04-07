@@ -70,28 +70,32 @@ function init() {
 init();
 document.querySelectorAll(".k-key").forEach(function (element) {
     document.onkeypress = function (event) {
+        setFocus()        
         document.querySelectorAll(".k-key").forEach(function (element) {
             element.classList.remove("activ")
         });
-        document.querySelector("#keyboard .k-key[data='" + event.keyCode + "']").classList.add("activ")
-    }
+        let keyData = document.querySelector("#keyboard .k-key[data='" + event.keyCode + "']")
+        keyData.classList.add("activ");
+        setTimeout(function () {keyData.classList.remove("activ"); }, 100);
+    }    
 })
 document.querySelectorAll(".k-key").forEach(function (element) {
     element.onclick = function (event) {
+        setFocus()
         const textarea = document.querySelector('textarea')
         const keys = document.querySelectorAll(".k-key")
         keys.forEach(function (element) {
             element.classList.remove("activ");
-
         });
         this.classList.add('activ')
+        setTimeout(function () { element.classList.remove("activ"); }, 100);
         switch (this.outerText) {
             case "Enter":
                 textarea.value += '\n'
                 break;
             case "Space":
             case "Backspace":
-                textarea.setRangeText('', textarea.selectionStart-1, textarea.selectionEnd)
+                textarea.setRangeText('', textarea.selectionStart - 1, textarea.selectionEnd)
                 break;
             case "Tab":
                 textarea.value += "   ";
